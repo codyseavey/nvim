@@ -693,6 +693,7 @@ require('lazy').setup({
         pyright = {},
         terraformls = {},
         bashls = {},
+        powershell_es = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
@@ -1002,6 +1003,28 @@ require('lazy').setup({
     --    - Incremental selection: Included, see `:help nvim-treesitter-incremental-selection-mod`
     --    - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
     --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
+  },
+  {
+    'preservim/nerdtree', -- File system explorer'
+    keys = {
+      {
+        '<leader>n',
+        function()
+          vim.cmd 'NERDTreeToggle'
+        end,
+        mode = 'n',
+        desc = '[N]ERDTree',
+      },
+      config = function()
+        -- Start NERDTree when Vim starts with a directory argument.
+        vim.api.nvim_create_autocmd('StdinReadPre', {
+          pattern = '*',
+          callback = function()
+            vim.s.std_in = 1
+          end,
+        })
+      end,
+    },
   },
 
   -- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
