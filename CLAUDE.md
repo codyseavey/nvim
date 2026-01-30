@@ -17,7 +17,7 @@ Personal Neovim configuration based on kickstart.nvim, modularized into a `lua/c
 
 - All plugin specs live in `lua/plugins/` as individual files returning a table (or list of tables).
 - Lua code is formatted with stylua (config in `.stylua.toml`): 160 column width, 2-space indent, single quotes.
-- Go files get special treatment: organizeImports + format on save via a `BufWritePre` autocmd in `lua/plugins/lsp.lua`.
+- Go files get special treatment: organizeImports on save via a `BufWritePre` autocmd in `lua/plugins/lsp.lua` (formatting is handled by conform.nvim, not duplicated here).
 - Nerd Font icons are enabled (`vim.g.have_nerd_font = true`).
 
 ## Adding a New Plugin

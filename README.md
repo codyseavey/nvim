@@ -47,8 +47,6 @@ lua/
 ### Optional
 
 - [lazygit](https://github.com/jesseduffield/lazygit) for `<leader>tg` terminal integration
-- ruff (`pip install ruff`) for Python linting
-- tflint for Terraform linting
 
 ## LSP Servers
 
